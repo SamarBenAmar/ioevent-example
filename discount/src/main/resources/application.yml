@@ -1,0 +1,8 @@
+server:
+    port: 8083
+spring:
+  application:
+    name: discount   
+  kafka:
+    bootstrap-servers: localhost:29092  
+
