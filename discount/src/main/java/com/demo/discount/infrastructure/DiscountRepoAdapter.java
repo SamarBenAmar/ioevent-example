@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.demo.discount.domain.model.DiscountId;
 import com.demo.discount.domain.model.Order;
 import com.demo.discount.domain.model.OrderId;
 import com.demo.discount.domain.ports.spi.DiscountRepo;
@@ -21,7 +22,7 @@ public class DiscountRepoAdapter implements DiscountRepo{
     }
 
     @Override
-    public Order lookUp(OrderId orderId) {
+    public Order lookUp(DiscountId orderId) {
         if (discountMongoRepo.findById(orderId).isPresent()) {
             return discountMongoRepo.findById(orderId).get();
         } else {

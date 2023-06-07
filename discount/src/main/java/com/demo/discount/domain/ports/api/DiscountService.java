@@ -4,8 +4,6 @@ import java.util.UUID;
 
 import com.demo.discount.domain.events.OrderCreated;
 import com.demo.discount.domain.events.OrderDiscounted;
-import com.demo.discount.domain.model.Order;
-import com.demo.discount.domain.model.OrderId;
 import com.ioevent.starter.annotations.IOResponse;
 
 public interface DiscountService {

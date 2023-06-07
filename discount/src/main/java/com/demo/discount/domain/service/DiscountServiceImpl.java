@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.demo.discount.domain.events.OrderCreated;
 import com.demo.discount.domain.events.OrderDiscounted;
+import com.demo.discount.domain.model.DiscountId;
 import com.demo.discount.domain.model.Money;
 import com.demo.discount.domain.model.Order;
-import com.demo.discount.domain.model.OrderId;
 import com.demo.discount.domain.ports.api.DiscountService;
 import com.demo.discount.domain.ports.spi.DiscountRepo;
 import com.ioevent.starter.annotations.IOEvent;
@@ -45,9 +45,9 @@ public class DiscountServiceImpl implements DiscountService  {
     }
 
     @Override
-    @IOEvent(key = "make discount", topic = "order", input = @InputEvent(key = "discount offered"), output = @OutputEvent(key = "order valid"))
+    @IOEvent(key = "make discount", topic = "order", input = @InputEvent(key = "discount offered"), output = @OutputEvent(key = "order discounted"))
     public OrderDiscounted makeDiscount(UUID value) throws Exception{
-        Order order = discountRepo.lookUp(new OrderId(value));
+        Order order = discountRepo.lookUp(new DiscountId(value));
         order.setPrice(new Money(order.discount(order.getPrice(), order.getDiscount())));
         discountRepo.save(order);
         return new OrderDiscounted(order.getOrderId(), order.getPrice());
