@@ -21,7 +21,7 @@ public class OrderController {
 
     @PostMapping
     public OrderCreated creatOrder(@RequestBody CreateOrderDto dto) throws Exception{
-        return orderService.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount(), false);
+        return orderService.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount());
     }
 
 }
