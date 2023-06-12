@@ -17,8 +17,8 @@ public class DiscountRepoAdapter implements DiscountRepo{
     DiscountMongoRepo discountMongoRepo;
 
     @Override
-    public void save(Order order) {
-        discountMongoRepo.save(order);
+    public Order save(Order order) {
+        return discountMongoRepo.save(order);
     }
 
     @Override
@@ -28,6 +28,11 @@ public class DiscountRepoAdapter implements DiscountRepo{
         } else {
             return (Order) Optional.empty().get();
         }
+    }
+
+    @Override
+    public Order findByOrderId(OrderId orderId) {
+        return discountMongoRepo.findByOrderId(orderId);
     }
     
 }

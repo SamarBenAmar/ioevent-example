@@ -5,6 +5,7 @@ import com.demo.discount.domain.model.Order;
 import com.demo.discount.domain.model.OrderId;
 
 public interface DiscountRepo {
-    void save(Order order);
+    Order save(Order order);
     Order lookUp(DiscountId orderId);
+    Order findByOrderId(OrderId orderId);
 }

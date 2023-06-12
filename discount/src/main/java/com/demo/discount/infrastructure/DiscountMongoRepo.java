@@ -9,5 +9,5 @@ import com.demo.discount.domain.model.OrderId;
 
 @Repository
 public interface DiscountMongoRepo extends MongoRepository<Order, DiscountId>{
-    
+    Order findByOrderId(OrderId orderId);
 }
