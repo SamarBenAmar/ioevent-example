@@ -5,6 +5,6 @@ import com.demo.order.domain.model.OrderId;
 
 public interface OrderRepository {
     
-    void save(Order order);
+    Order save(Order order);
     Order lookup(OrderId orderId);
 }

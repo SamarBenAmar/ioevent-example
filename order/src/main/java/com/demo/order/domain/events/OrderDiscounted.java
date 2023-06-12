@@ -1,6 +1,5 @@
 package com.demo.order.domain.events;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 import com.demo.order.domain.model.Money;

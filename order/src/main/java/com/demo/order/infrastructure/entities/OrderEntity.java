@@ -23,8 +23,11 @@ public class OrderEntity {
     private String name;
     private Money price;
     private float discount;
-    //private boolean valid = false;
-    //private String description;
+    private boolean valid;
+    private boolean shipped;
+    private boolean prepared;
+    private boolean hasInvoice;
+    private boolean closed;
 
     public OrderEntity(Order order){
         orderId = order.id();
@@ -32,5 +35,10 @@ public class OrderEntity {
         name = order.getName();
         price = order.getPrice();
         discount = order.getDiscount();
+        valid = order.isValid();
+        shipped = order.isShipped();
+        prepared = order.isPrepared();
+        hasInvoice = order.isHasInvoice();
+        closed = order.isClosed();
     }
 }

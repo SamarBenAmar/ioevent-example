@@ -19,8 +19,8 @@ public class OrderRepoAdapter implements OrderRepository{
     OrderMongoRepository orderMongoRepository;
 
     @Override
-    public void save(Order order) {
-        orderMongoRepository.save(new OrderEntity(order));
+    public Order save(Order order) {
+        return OrderMapper.instance.toDomain(orderMongoRepository.save(new OrderEntity(order)));
     }
 
     @Override

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.order.application.dto.CreateOrderDto;
 import com.demo.order.domain.events.OrderCreated;
+import com.demo.order.domain.eventsHandlers.OrderEventHandler;
 import com.demo.order.domain.model.CustomerId;
 import com.demo.order.domain.model.Money;
 import com.demo.order.domain.ports.api.OrderService;
@@ -17,11 +18,11 @@ import com.demo.order.domain.ports.api.OrderService;
 public class OrderController {
     
     @Autowired
-    OrderService orderService;
+    OrderEventHandler orderEventHandler;
 
     @PostMapping
     public OrderCreated creatOrder(@RequestBody CreateOrderDto dto) throws Exception{
-        return orderService.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount());
+        return orderEventHandler.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount());
     }
 
 }
