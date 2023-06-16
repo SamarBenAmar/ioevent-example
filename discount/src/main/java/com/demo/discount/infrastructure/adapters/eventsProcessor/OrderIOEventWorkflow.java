@@ -1,25 +1,24 @@
-package com.demo.discount.infrastructure;
+package com.demo.discount.infrastructure.adapters.eventsProcessor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.discount.domain.events.OrderCreated;
-import com.demo.discount.domain.events.OrderDiscounted;
-import com.demo.discount.domain.eventsHandlers.DiscountEventHandler;
-
-import com.demo.discount.domain.model.Order;
-import com.demo.discount.domain.ports.api.DiscountService;
 import com.ioevent.starter.annotations.IOEvent;
 import com.ioevent.starter.annotations.IOFlow;
 import com.ioevent.starter.annotations.IOResponse;
 import com.ioevent.starter.annotations.InputEvent;
 import com.ioevent.starter.annotations.OutputEvent;
+import com.demo.discount.core.application.ports.api.DiscountService;
+import com.demo.discount.core.application.ports.api.OrserWorkflowService;
+import com.demo.discount.core.domain.events.OrderCreated;
+import com.demo.discount.core.domain.events.OrderDiscounted;
+import com.demo.discount.core.domain.model.Order;
 import com.ioevent.starter.annotations.GatewayOutputEvent;
 
 
 @Service
 @IOFlow(name = "order_workflow")
-public class DiscountEventHandlerAdapter implements DiscountEventHandler  {
+public class OrderIOEventWorkflow implements OrserWorkflowService  {
 
     @Autowired
     DiscountService discountService;

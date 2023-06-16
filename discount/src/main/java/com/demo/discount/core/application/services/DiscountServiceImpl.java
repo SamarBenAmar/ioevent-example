@@ -1,16 +1,16 @@
-package com.demo.discount.domain.service;
+package com.demo.discount.core.application.services;
 
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.discount.domain.events.OrderCreated;
-import com.demo.discount.domain.model.Money;
-import com.demo.discount.domain.model.Order;
-import com.demo.discount.domain.model.OrderId;
-import com.demo.discount.domain.ports.api.DiscountService;
-import com.demo.discount.domain.ports.spi.DiscountRepo;
+import com.demo.discount.core.application.ports.api.DiscountService;
+import com.demo.discount.core.application.ports.spi.DiscountRepo;
+import com.demo.discount.core.domain.events.OrderCreated;
+import com.demo.discount.core.domain.model.Money;
+import com.demo.discount.core.domain.model.Order;
+import com.demo.discount.core.domain.model.OrderId;
 
 @Service
 public class DiscountServiceImpl implements DiscountService  {

@@ -1,14 +1,14 @@
-package com.demo.discount.infrastructure;
+package com.demo.discount.infrastructure.adapters.db;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.discount.domain.model.DiscountId;
-import com.demo.discount.domain.model.Order;
-import com.demo.discount.domain.model.OrderId;
-import com.demo.discount.domain.ports.spi.DiscountRepo;
+import com.demo.discount.core.application.ports.spi.DiscountRepo;
+import com.demo.discount.core.domain.model.DiscountId;
+import com.demo.discount.core.domain.model.Order;
+import com.demo.discount.core.domain.model.OrderId;
 
 @Service
 public class DiscountRepoAdapter implements DiscountRepo{

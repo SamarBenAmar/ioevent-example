@@ -1,9 +1,9 @@
-package com.demo.discount.domain.events;
+package com.demo.discount.core.domain.events;
 
 import java.util.UUID;
 
-import com.demo.discount.domain.model.Money;
-import com.demo.discount.domain.model.OrderId;
+import com.demo.discount.core.domain.model.Money;
+import com.demo.discount.core.domain.model.OrderId;
 
 public record OrderDiscounted(UUID eventId, OrderId orderId, Money price) {
 

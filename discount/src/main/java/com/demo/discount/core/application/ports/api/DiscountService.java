@@ -1,9 +1,9 @@
-package com.demo.discount.domain.ports.api;
+package com.demo.discount.core.application.ports.api;
 
 import java.util.UUID;
 
-import com.demo.discount.domain.events.OrderCreated;
-import com.demo.discount.domain.model.Order;
+import com.demo.discount.core.domain.events.OrderCreated;
+import com.demo.discount.core.domain.model.Order;
 
 public interface DiscountService {
 

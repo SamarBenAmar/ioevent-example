@@ -1,4 +1,4 @@
-package com.demo.discount.domain.model;
+package com.demo.discount.core.domain.model;
 
 import java.math.BigDecimal;
 import java.util.UUID;
