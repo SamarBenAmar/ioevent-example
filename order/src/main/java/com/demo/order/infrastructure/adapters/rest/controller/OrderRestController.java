@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.order.core.application.ports.api.OrderWorkflowService;
+import com.demo.order.core.application.ports.api.OrderResource;
 import com.demo.order.core.application.ports.api.OrderService;
 import com.demo.order.core.domain.events.OrderCreated;
 import com.demo.order.core.domain.model.CustomerId;
@@ -15,14 +16,15 @@ import com.demo.order.infrastructure.adapters.rest.controller.dto.CreateOrderDto
 
 @RestController
 @RequestMapping("/orders")
-public class OrderRestController {
+public class OrderRestController implements OrderResource{
     
     @Autowired
-    OrderWorkflowService orderEventHandler;
+    OrderWorkflowService orderWorkflowService;
 
+    @Override
     @PostMapping
-    public OrderCreated creatOrder(@RequestBody CreateOrderDto dto) throws Exception{
-        return orderEventHandler.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount());
+    public OrderCreated createOrder(@RequestBody CreateOrderDto dto) throws Exception{
+        return orderWorkflowService.createOrder(new CustomerId(dto.customerId()), dto.name(), new Money(dto.price()), dto.discount());
     }
 
 }
