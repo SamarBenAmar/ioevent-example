@@ -13,7 +13,7 @@ import com.demo.order.infrastructure.mappers.OrderMapper;
 import com.demo.order.infrastructure.repository.OrderMongoRepository;
 
 @Service
-public class OrderRepoAdapter implements OrderRepository{
+public class OrderMongoAdapter implements OrderRepository{
 
     @Autowired
     OrderMongoRepository orderMongoRepository;

@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.demo.order.core.application.services.OrderServiceImpl;
 import com.demo.order.core.domain.model.Order;
-import com.demo.order.infrastructure.adapters.OrderRepoAdapter;
+import com.demo.order.infrastructure.adapters.OrderMongoAdapter;
 
 @RunWith(MockitoJUnitRunner.class)
 public class OrderServiceTest {
@@ -26,7 +26,7 @@ public class OrderServiceTest {
     OrderServiceImpl orderService = new OrderServiceImpl();
 
     @Mock
-    OrderRepoAdapter orderRepo;
+    OrderMongoAdapter orderRepo;
 
     @BeforeEach
 	public void init() {		
