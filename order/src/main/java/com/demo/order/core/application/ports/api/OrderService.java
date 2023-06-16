@@ -1,13 +1,13 @@
-package com.demo.order.domain.ports.api;
+package com.demo.order.core.application.ports.api;
 
 import java.util.UUID;
 
-import com.demo.order.domain.events.OrderConfirmed;
-import com.demo.order.domain.events.OrderDiscounted;
-import com.demo.order.domain.model.CustomerId;
-import com.demo.order.domain.model.Money;
-import com.demo.order.domain.model.Order;
-import com.demo.order.domain.model.OrderId;
+import com.demo.order.core.domain.events.OrderConfirmed;
+import com.demo.order.core.domain.events.OrderDiscounted;
+import com.demo.order.core.domain.model.CustomerId;
+import com.demo.order.core.domain.model.Money;
+import com.demo.order.core.domain.model.Order;
+import com.demo.order.core.domain.model.OrderId;
 
 public interface OrderService {
 

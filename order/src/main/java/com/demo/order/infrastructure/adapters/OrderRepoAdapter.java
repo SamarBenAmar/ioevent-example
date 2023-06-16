@@ -5,9 +5,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.order.domain.model.Order;
-import com.demo.order.domain.model.OrderId;
-import com.demo.order.domain.ports.spi.OrderRepository;
+import com.demo.order.core.application.ports.spi.OrderRepository;
+import com.demo.order.core.domain.model.Order;
+import com.demo.order.core.domain.model.OrderId;
 import com.demo.order.infrastructure.entities.OrderEntity;
 import com.demo.order.infrastructure.mappers.OrderMapper;
 import com.demo.order.infrastructure.repository.OrderMongoRepository;

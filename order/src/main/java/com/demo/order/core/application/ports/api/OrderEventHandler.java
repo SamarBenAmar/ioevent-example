@@ -1,12 +1,12 @@
-package com.demo.order.domain.eventsHandlers;
+package com.demo.order.core.application.ports.api;
 
-import com.demo.order.domain.events.OrderClosed;
-import com.demo.order.domain.events.OrderConfirmed;
-import com.demo.order.domain.events.OrderCreated;
-import com.demo.order.domain.events.OrderDiscounted;
-import com.demo.order.domain.model.CustomerId;
-import com.demo.order.domain.model.Money;
-import com.demo.order.domain.model.Order;
+import com.demo.order.core.domain.events.OrderClosed;
+import com.demo.order.core.domain.events.OrderConfirmed;
+import com.demo.order.core.domain.events.OrderCreated;
+import com.demo.order.core.domain.events.OrderDiscounted;
+import com.demo.order.core.domain.model.CustomerId;
+import com.demo.order.core.domain.model.Money;
+import com.demo.order.core.domain.model.Order;
 
 public interface OrderEventHandler {
     OrderCreated createOrder(CustomerId customerId, String name, Money price, float discount) throws Exception;

@@ -1,10 +1,10 @@
-package com.demo.order.domain.events;
+package com.demo.order.core.domain.events;
 
 import java.util.UUID;
 
-import com.demo.order.domain.model.CustomerId;
-import com.demo.order.domain.model.Money;
-import com.demo.order.domain.model.OrderId;
+import com.demo.order.core.domain.model.CustomerId;
+import com.demo.order.core.domain.model.Money;
+import com.demo.order.core.domain.model.OrderId;
 
 public record OrderConfirmed(UUID eventId, OrderId orderId, CustomerId customerId, String name, Money price) {
 

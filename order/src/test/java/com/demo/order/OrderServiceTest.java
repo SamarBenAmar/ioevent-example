@@ -15,8 +15,8 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.demo.order.domain.model.Order;
-import com.demo.order.domain.service.OrderServiceImpl;
+import com.demo.order.core.application.services.OrderServiceImpl;
+import com.demo.order.core.domain.model.Order;
 import com.demo.order.infrastructure.adapters.OrderRepoAdapter;
 
 @RunWith(MockitoJUnitRunner.class)

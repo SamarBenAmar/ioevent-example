@@ -1,4 +1,4 @@
-package com.demo.order.domain.model;
+package com.demo.order.core.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

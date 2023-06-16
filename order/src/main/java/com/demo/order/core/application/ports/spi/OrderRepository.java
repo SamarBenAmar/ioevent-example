@@ -1,7 +1,7 @@
-package com.demo.order.domain.ports.spi;
+package com.demo.order.core.application.ports.spi;
 
-import com.demo.order.domain.model.Order;
-import com.demo.order.domain.model.OrderId;
+import com.demo.order.core.domain.model.Order;
+import com.demo.order.core.domain.model.OrderId;
 
 public interface OrderRepository {
     
