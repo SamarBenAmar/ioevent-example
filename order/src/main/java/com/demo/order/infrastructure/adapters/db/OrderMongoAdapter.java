@@ -1,4 +1,4 @@
-package com.demo.order.infrastructure.adapters;
+package com.demo.order.infrastructure.adapters.db;
 
 import java.util.Optional;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.demo.order.core.application.ports.spi.OrderRepository;
 import com.demo.order.core.domain.model.Order;
 import com.demo.order.core.domain.model.OrderId;
-import com.demo.order.infrastructure.entities.OrderEntity;
-import com.demo.order.infrastructure.mappers.OrderMapper;
-import com.demo.order.infrastructure.repository.OrderMongoRepository;
+import com.demo.order.infrastructure.adapters.db.entities.OrderEntity;
+import com.demo.order.infrastructure.adapters.db.mappers.OrderMapper;
+import com.demo.order.infrastructure.adapters.db.repository.OrderMongoRepository;
 
 @Service
 public class OrderMongoAdapter implements OrderRepository{

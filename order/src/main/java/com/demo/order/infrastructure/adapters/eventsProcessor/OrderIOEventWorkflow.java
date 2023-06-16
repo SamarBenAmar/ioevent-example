@@ -1,4 +1,4 @@
-package com.demo.order.infrastructure.adapters;
+package com.demo.order.infrastructure.adapters.eventsProcessor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.demo.order.core.application.services.OrderServiceImpl;
 import com.demo.order.core.domain.model.Order;
-import com.demo.order.infrastructure.adapters.OrderMongoAdapter;
+import com.demo.order.infrastructure.adapters.db.OrderMongoAdapter;
 
 @RunWith(MockitoJUnitRunner.class)
 public class OrderServiceTest {
