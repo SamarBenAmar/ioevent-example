@@ -9,7 +9,7 @@ import com.ioevent.starter.annotations.IOResponse;
 import com.ioevent.starter.annotations.InputEvent;
 import com.ioevent.starter.annotations.OutputEvent;
 import com.demo.discount.core.application.ports.api.DiscountService;
-import com.demo.discount.core.application.ports.api.OrserWorkflowService;
+import com.demo.discount.core.application.ports.api.OrderWorkflowService;
 import com.demo.discount.core.domain.events.OrderCreated;
 import com.demo.discount.core.domain.events.OrderDiscounted;
 import com.demo.discount.core.domain.model.Order;
@@ -18,12 +18,11 @@ import com.ioevent.starter.annotations.GatewayOutputEvent;
 
 @Service
 @IOFlow(name = "order_workflow")
-public class OrderIOEventWorkflow implements OrserWorkflowService  {
+public class OrderIOEventWorkflow implements OrderWorkflowService{
 
     @Autowired
     DiscountService discountService;
 
-    @Override
     @IOEvent(key = "check discount", topic = "order", //
     input = @InputEvent(key = "order created"), //
     gatewayOutput = @GatewayOutputEvent(exclusive = true, output = { //
@@ -40,7 +39,6 @@ public class OrderIOEventWorkflow implements OrserWorkflowService  {
         }
     }
 
-    @Override
     @IOEvent(key = "make discount", topic = "order", input = @InputEvent(key = "discount offered"), output = @OutputEvent(key = "order discounted"))
     public OrderDiscounted makeDiscount(Order order) throws Exception{
         Order orderDiscounted = discountService.makeDiscount(order.getOrderId().value());
