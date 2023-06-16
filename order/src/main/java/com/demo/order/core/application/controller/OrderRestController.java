@@ -1,4 +1,4 @@
-package com.demo.order.core.application;
+package com.demo.order.core.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.order.core.application.dto.CreateOrderDto;
-import com.demo.order.core.application.ports.api.OrderEventHandler;
+import com.demo.order.core.application.ports.api.OrderWorkflowService;
+import com.demo.order.core.application.controller.dto.CreateOrderDto;
 import com.demo.order.core.application.ports.api.OrderService;
 import com.demo.order.core.domain.events.OrderCreated;
 import com.demo.order.core.domain.model.CustomerId;
@@ -15,10 +15,10 @@ import com.demo.order.core.domain.model.Money;
 
 @RestController
 @RequestMapping("/orders")
-public class OrderController {
+public class OrderRestController {
     
     @Autowired
-    OrderEventHandler orderEventHandler;
+    OrderWorkflowService orderEventHandler;
 
     @PostMapping
     public OrderCreated creatOrder(@RequestBody CreateOrderDto dto) throws Exception{

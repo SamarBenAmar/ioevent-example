@@ -3,7 +3,7 @@ package com.demo.order.infrastructure.adapters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.order.core.application.ports.api.OrderEventHandler;
+import com.demo.order.core.application.ports.api.OrderWorkflowService;
 import com.demo.order.core.application.ports.api.OrderService;
 import com.demo.order.core.domain.events.OrderClosed;
 import com.demo.order.core.domain.events.OrderConfirmed;
@@ -21,7 +21,7 @@ import com.ioevent.starter.annotations.GatewayInputEvent;
 
 @Service
 @IOFlow(name = "order_workflow")
-public class OrderEventHandlerAdapter implements OrderEventHandler {
+public class OrderIOEventWorkflow implements OrderWorkflowService {
 
     @Autowired
     OrderService orderService;

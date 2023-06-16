@@ -1,4 +1,4 @@
-package com.demo.order.core.application.dto;
+package com.demo.order.core.application.controller.dto;
 
 import java.math.BigDecimal;
 import java.util.UUID;

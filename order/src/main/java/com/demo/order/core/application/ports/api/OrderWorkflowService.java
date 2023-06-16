@@ -8,7 +8,7 @@ import com.demo.order.core.domain.model.CustomerId;
 import com.demo.order.core.domain.model.Money;
 import com.demo.order.core.domain.model.Order;
 
-public interface OrderEventHandler {
+public interface OrderWorkflowService {
     OrderCreated createOrder(CustomerId customerId, String name, Money price, float discount) throws Exception;
     Order updateOrder(OrderDiscounted orderDiscounted);
     OrderConfirmed confirmOrder(Order order);
